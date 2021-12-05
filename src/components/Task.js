@@ -25,7 +25,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
           value={title} 
           readOnly={true} 
           placeholder="Input title"
-          style={{ background: 'red' }}
+          style={{ textOverflow: 'ellipsis' }}
         />
       </div>
 
@@ -33,7 +33,11 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
         {state !== 'TASK_ARCHIVED' && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
-            <span className={`icon-star`} id={`pinTask-${id}`} aria-label={`pinTask-${id}`} />
+            <span 
+              className={`icon-star`} 
+              id={`pinTask-${id}`} 
+              aria-label={`pinTask-${id}`} 
+            />
           </a>
         )}
       </div>
