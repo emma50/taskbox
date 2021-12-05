@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// presentational component
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   console.log({ task: { id, title, state }, onArchiveTask, onPinTask }, 'TASK')
+  console.log(onArchiveTask, 'ONARCHIVETASK')
+  console.log(onPinTask, 'ONPINTASK')
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">

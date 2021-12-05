@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Task from './Task';
 import { updateTaskState } from '../lib/store';
 
+// presentational component
 export function PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   const events = {
     onPinTask,
@@ -74,7 +75,8 @@ PureTaskList.defaultProps = {
   loading: false,
 };
 
-export default function TaskList() {
+// container component
+export function TaskList() {
   // We're retrieving our state from the store
   const tasks = useSelector(state => state.tasks);
   // We're defining an variable to handle dispatching the actions back to the store
